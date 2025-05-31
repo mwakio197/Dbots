@@ -23,7 +23,7 @@ import RunStrategy from '../dashboard/run-strategy';
 
 const Chart = lazy(() => import('../chart'));
 const Tutorial = lazy(() => import('../tutorials'));
-const Analysis = lazy(() => import('../analysis/analysis'));
+//const Analysis = lazy(() => import('../analysis/analysis'));
 const BotsPage = lazy(() => import('../bots/freebots')); // Assuming you created BotsPage.tsx
 
 const DashboardIcon = () => (
@@ -113,12 +113,12 @@ const AppWrapper = observer(() => {
         const fetchBots = async () => {
             const botFiles = [
                 'SPEEDBOT_updated.xml',
-                'paigeys matches bot  25.xml',
-                'paigeys under 8 ai bot 2025.xml',
-                'paigey over 0 ai bot 25.xml',
-                'paigey under 7 ai bot 25.xml',
-                'paigeys over 1 ai bot 2025.xml',
-                'paigeys new ai bot 2025.xml',
+                'matches bot  25.xml',
+                'under 8 ai bot 2025.xml',
+                'over 0 ai bot 25.xml',
+                'under 7 ai bot 25.xml',
+                'over 1 ai bot 2025.xml',
+                'new ai bot 2025.xml',
                 // Add more paths to your XML files
             ];
             const botPromises = botFiles.map(async (file) => {
@@ -213,7 +213,7 @@ const handleLinkChange = (path: string) => {
                             </Suspense>
                         </div>
                         <div label={<><AnalysisToolIcon /><Localize i18n_default_text='Analysis Tool' /></>} id='id-analysis-tool'
-                             onClick={() => handleLinkChange('analysis')}
+                             onClick={() => handleLinkChange('bots')}
                             style={{ cursor: 'pointer' }}
                         >
                             <Suspense fallback={<ChunkLoader message={localize('Please wait, loading page...')} />}>
